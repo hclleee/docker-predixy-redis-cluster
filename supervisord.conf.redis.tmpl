@@ -1,0 +1,6 @@
+
+[program:redis-${PORT}]
+command=${BIN_BASE_DIR}/redis-server ${CONF_BASE_DIR}/redis/${PORT}/redis.conf
+stdout_logfile=${LOG_BASE_DIR}/redis/%(program_name)s.log
+stderr_logfile=${LOG_BASE_DIR}/redis/%(program_name)s.log
+autorestart=true

@@ -1,0 +1,6 @@
+
+[program:redis-proxy]
+command=${BIN_BASE_DIR}/predixy ${CONF_BASE_DIR}/predixy/predixy.conf
+stdout_logfile=${LOG_BASE_DIR}/redis/%(program_name)s.log
+stderr_logfile=${LOG_BASE_DIR}/redis/%(program_name)s.log
+autorestart=true

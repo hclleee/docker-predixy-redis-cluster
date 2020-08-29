@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis-cluster:
+    image: octo5/predixy-redis-cluster:latest
+    restart: always
+    ports:
+      - 6379:6379
+      - 7000:7000
+      - 7001:7001
+      - 7002:7002
+      - 7003:7003
+      - 7004:7004
+      - 7005:7005

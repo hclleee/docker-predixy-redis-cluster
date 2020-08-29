@@ -1,0 +1,26 @@
+Name redis-proxy
+Bind 0.0.0.0:${PROXY_PORT}
+WorkerThreads 4
+MaxMemory 0
+ClientTimeout 300
+BufSize 4096
+LogVerbSample 0
+LogDebugSample 0
+LogInfoSample 0
+LogNoticeSample 0
+LogWarnSample 0
+LogErrorSample 1
+
+ClusterServerPool {
+  MasterReadPriority 60
+  StaticSlaveReadPriority 50
+  DynamicSlaveReadPriority 60
+  RefreshInterval 1
+  ServerTimeout 1
+  ServerFailureLimit 10
+  ServerRetryTimeout 1
+  KeepAlive 120
+  Servers {
+    ${NODES}
+  }
+}
