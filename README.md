@@ -23,7 +23,6 @@ docker pull octo5/predixy-redis-cluster:latest
 ## Using Docker Compose
 
 ```yaml
-version: '3'
 services:
   redis-cluster:
     image: octo5/predixy-redis-cluster:latest

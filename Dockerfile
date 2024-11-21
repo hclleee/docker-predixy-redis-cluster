@@ -3,8 +3,8 @@ FROM ubuntu:20.04
 MAINTAINER octo-5 (hyochan.lee@gmail.com)
 
 ENV HOME /root
-ENV PREDIXY_VERSION=1.0.5
-ENV REDIS_VERSION=5.0.6
+ENV PREDIXY_VERSION=7.0.1
+ENV REDIS_VERSION=7.0.15
 ENV BIN_BASE_DIR=/usr/local/bin
 ENV CONF_BASE_DIR=/usr/local/etc
 ENV DATA_BASE_DIR=/var/lib
@@ -24,7 +24,7 @@ RUN apt-get install --no-install-recommends apt-utils -y \
       build-essential
 RUN apt-get clean -y
 
-RUN wget https://github.com/antirez/redis/archive/${REDIS_VERSION}.tar.gz -O ./redis.tar.gz
+RUN wget https://github.com/redis/redis/archive/${REDIS_VERSION}.tar.gz -O ./redis.tar.gz
 RUN tar xfz ./redis.tar.gz -C ./
 RUN mv ./redis-${REDIS_VERSION} ./redis
 
